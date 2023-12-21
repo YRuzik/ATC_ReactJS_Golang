@@ -1,0 +1,4 @@
+/.idea
+/atc-frontend/node_modules
+
+/go-server/.idea
