@@ -1,3 +1,4 @@
+@use "global";
 @font-face {
   font-family: "Gilroy";
   src: url("../assets/fonts/Gilroy-Bold.ttf") format("truetype");
@@ -34,8 +35,8 @@ body {
 }
 
 .body-container {
-  max-width: 1668px;
-  margin: 0px auto;
+  max-width: global.$body-width;
+  margin: 0 auto;
 }
 
 h1 {
@@ -86,9 +87,7 @@ p {
 .gradient-h1 {
   font-weight: 700;
   font-size: 60px;
-  background: linear-gradient(97.53deg, #6DDCFF 17.63%, #7F60F9 115.95%),
-              linear-gradient(0deg, #BDBDBD, #BDBDBD),
-              linear-gradient(0deg, #FFFFFF, #FFFFFF);
+  background: linear-gradient(97.53deg, #6DDCFF 17.63%, #7F60F9 115.95%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   display: inline-block;

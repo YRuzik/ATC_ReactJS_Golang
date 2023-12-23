@@ -1,0 +1,13 @@
+@use "../../../styles/global";
+.custom-link {
+  font-weight: 400;
+  font-size: 16px;
+  color: white;
+  opacity: 0.7;
+  text-decoration: none;
+  transition: global.$default-transition ease-in-out;
+}
+
+.custom-link:hover {
+  opacity: 1;
+}

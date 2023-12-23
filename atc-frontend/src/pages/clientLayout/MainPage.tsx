@@ -1,4 +1,4 @@
-import StyleTest from "../../components/styleTest/StyleTest.tsx";
+import StyleTest from "../../components/other/styleTest/StyleTest.tsx";
 
 const MainPage = () => {
     return (

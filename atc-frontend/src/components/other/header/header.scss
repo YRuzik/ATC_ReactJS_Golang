@@ -1,0 +1,40 @@
+@use "../../../styles/global";
+
+.header-wrapper {
+  width: 100%;
+  top: 3%;
+  position: fixed;
+}
+
+.header-container {
+  width: 90%;
+  margin: 0 auto;
+  padding: 15px;
+  border-radius: global.$max-radius;
+  opacity: 1;
+  height: 73px;
+  backdrop-filter: blur(10px);
+  background-color: rgba(255,255,255,.05);
+}
+
+.header-content {
+  visibility: visible;
+}
+
+@media (min-width: 576px) {
+}
+
+@media (min-width: 768px) {
+}
+
+@media (min-width: 992px) {
+  .header-content {
+    visibility: hidden;
+  }
+}
+
+@media (min-width: 1200px) {
+  .header-content {
+    visibility: visible;
+  }
+}

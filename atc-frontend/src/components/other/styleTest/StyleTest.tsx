@@ -1,3 +1,6 @@
+import CustomButton, {ButtonStyles} from "../customButton/CustomButton.tsx";
+import CustomLink from "../customLink/CustomLink.tsx";
+
 const StyleTest = () => {
     return (
         <div>
@@ -31,6 +34,9 @@ const StyleTest = () => {
                 05
             </div>
             <hr/>
+            <CustomButton label={"Обсудить проект"} onClick={() => {}} style={ButtonStyles.outlinedButton}/>
+            <CustomButton label={"ОБСУДИТЬ ПРОЕКТ"} onClick={() => {}}/>
+            <CustomLink path={""} label={"Кастомный ЛИНК"}/>
         </div>
     )
 }

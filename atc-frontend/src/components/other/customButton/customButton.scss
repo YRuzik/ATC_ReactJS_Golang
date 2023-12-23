@@ -1,0 +1,49 @@
+@use "../../../styles/global";
+.elevated-button {
+  font-size: 16px;
+  font-weight: 500;
+  color: white;
+  background: global.$default-gradient;
+  height: 60px;
+  width: 200px;
+  border-radius: global.$max-radius;
+  cursor: pointer;
+  transition: global.$default-transition ease-in-out;
+}
+
+.elevated-button:hover {
+  opacity: 0.9;
+}
+
+.outlined-button {
+  font-size: 16px;
+  font-weight: 500;
+  color: white;
+  display: inline-block;
+  z-index: 0;
+  position: relative;
+  background-color: transparent;
+  height: 50px;
+  width: 190px;
+  border-radius: global.$max-radius;
+  cursor: pointer;
+  transition: global.$default-transition ease-in-out;
+}
+
+.outlined-button:before {
+  content: "";
+  position: absolute;
+  z-index: -1;
+  inset: 0;
+  padding: 2px;
+  border-radius: global.$max-radius;
+  background: global.$default-gradient;
+  -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+          mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+  -webkit-mask-composite: xor;
+  mask-composite: exclude;
+}
+
+.outlined-button:hover {
+  opacity: 0.9;
+}
