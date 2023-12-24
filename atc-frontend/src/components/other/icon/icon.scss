@@ -1,0 +1,13 @@
+@use "../../../styles/global";
+.icon-button {
+  border-radius: global.$max-radius;
+  transition: global.$default-transition;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+}
+
+.icon-button:hover {
+  background-color: rgba(0,0,0,.2);
+}

@@ -2,12 +2,11 @@
 .custom-link {
   font-weight: 400;
   font-size: 16px;
-  color: white;
-  opacity: 0.7;
+  color: global.$link-color;
   text-decoration: none;
   transition: global.$default-transition ease-in-out;
 }
 
 .custom-link:hover {
-  opacity: 1;
+  color: white;
 }
