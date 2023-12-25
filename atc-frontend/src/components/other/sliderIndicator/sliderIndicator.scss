@@ -1,0 +1,39 @@
+@use "../../../styles/global";
+.slider-indicator-container {
+  display: flex;
+  width: 100%;
+  flex-direction: column;
+  align-items: start;
+}
+
+.slider-indicator-container section {
+  display: flex;
+  align-items: center;
+  justify-content: start;
+}
+
+.slider-indicator {
+  width: 100%;
+  height: 2px;
+  display: flex;
+  align-items: center;
+  justify-content: start;
+}
+
+.slider-indicator {
+  position: relative;
+  height: 2px;
+  border-radius: global.$max-radius;
+  width: 100%;
+  background-color: #D9D9D933;
+  transition: global.$default-transition ease-in-out;
+}
+
+.slider-indicator div {
+  position: absolute;
+  height: 2px;
+  border-radius: global.$max-radius;
+  width: 100%;
+  background: global.$default-gradient;
+  transition: global.$default-transition ease-in-out;
+}

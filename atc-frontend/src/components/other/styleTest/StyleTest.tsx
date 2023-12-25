@@ -20,7 +20,6 @@ const StyleTest = () => {
             <div className={"title-text"}>
                 как мы работаем
             </div>
-            <text> typical text</text>
             <p>
                 Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam
             </p>

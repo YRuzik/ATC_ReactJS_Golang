@@ -5,9 +5,7 @@ const ClientLayout = () => {
     return (
         <div>
             <Header/>
-            <div className={"body-container"}>
-                <Outlet/>
-            </div>
+            <Outlet/>
         </div>
     )
 }

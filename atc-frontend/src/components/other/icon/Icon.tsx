@@ -1,11 +1,15 @@
 import {FC} from "react";
 import i_menu from "../../../assets/icons/Menu.svg";
+import i_search from "../../../assets/icons/Search.svg";
+import i_next from "../../../assets/icons/Next.svg";
 
 import './icon.scss'
 
 export enum AppIcons {
     // @ts-ignore
-    menu = i_menu
+    menu = i_menu,
+    search = i_search,
+    next = i_next
 }
 
 type iconProps = {

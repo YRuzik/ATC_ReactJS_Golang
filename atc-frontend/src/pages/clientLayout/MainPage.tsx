@@ -1,9 +1,10 @@
-import StyleTest from "../../components/other/styleTest/StyleTest.tsx";
+import CarouselBlock from "../../components/mainPage/carouselBlock/CarouselBlock.tsx";
+
 
 const MainPage = () => {
     return (
         <div>
-            <StyleTest/>
+            <CarouselBlock/>
         </div>
     )
 }

@@ -1,0 +1,115 @@
+@use "../../../styles/global";
+
+.carousel-image {
+  position: absolute;
+  z-index: -100000;
+  object-fit: cover;
+  width: 100%;
+  height: 90vh;
+  overflow: hidden;
+  filter: brightness(70%);
+}
+
+.carousel-image-tint {
+  position: absolute;
+  z-index: -10000;
+  background: linear-gradient(180deg, rgba(2, 0, 36, 0) 0%, global.$body-bg-color 90%);
+  width: 100%;
+  height: 90vh;
+}
+
+.carousel-changeable-area {
+  padding-top: 35vh;
+  padding-bottom: 30px;
+}
+
+.transform-in {
+  animation: {
+    duration: global.$default-transition;
+    name: transform-in;
+  };
+
+  @keyframes transform-in {
+    from {
+      transform: translateX(5%);
+      opacity: 0;
+    }
+    to {
+      transform: translateX(0);
+      opacity: 1;
+    }
+  }
+}
+
+.transform-out {
+  animation: {
+    duration: global.$default-transition;
+    name: transform-out;
+  };
+
+  @keyframes transform-out {
+    from {
+      transform: translateX(0);
+      opacity: 1;
+    }
+    to {
+      transform: translateX(-5%);
+      opacity: 0;
+    }
+  }
+}
+
+.image-in {
+  animation: {
+    duration: global.$default-transition;
+    name: image-in;
+  };
+
+  @keyframes image-in {
+    from {
+      opacity: 0;
+    }
+    to {
+      opacity: 1;
+    }
+  }
+}
+
+.image-out {
+  animation: {
+    duration: global.$default-transition;
+    name: image-out;
+  };
+
+  @keyframes image-out {
+    from {
+      opacity: 1;
+    }
+    to {
+      opacity: 0;
+    }
+  }
+}
+
+.carousel-actions {
+  display: flex;
+  width: 625px;
+  padding-bottom: 30px;
+}
+
+.carousel-actions div:first-child {
+  width: 50%;
+  margin-right: 10px;
+}
+
+@media (max-width: 1024px) {
+  .carousel-actions {
+    flex-direction: column;
+    width: 100%;
+  }
+
+  .carousel-actions div:first-child {
+    margin-bottom: 15px;
+    width: 100%;
+  }
+}

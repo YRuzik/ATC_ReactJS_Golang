@@ -25,8 +25,10 @@ const Header = () => {
                     <div className={"flex-e-c w-50 header-content"}>
                         <h4 className={'mr-5'}>+7 (999)-999-99-99</h4>
                         <h4 className={'mr-5'}>test@mail.ru</h4>
-                        <CustomButton style={ButtonStyles.outlinedButton} label={"Обсудить проект"} onClick={() => {
-                        }}/>
+                        <div className={"w-25"}>
+                            <CustomButton style={ButtonStyles.outlinedButton} label={"Обсудить проект"} onClick={() => {
+                            }}/>
+                        </div>
                     </div>
                     <div className={'header-menu'}>
                         <Icon icon={AppIcons.menu} onClick={() => {

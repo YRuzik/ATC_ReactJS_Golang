@@ -19,11 +19,13 @@ const BurgerMenu: FC<burgerMenuProps> = ({isOpen, onClose}) => {
 
     useEffect(() => {
         if (menuRef !== null && isOpen) {
+            document.body.style.overflow = "hidden";
             const listener = (e: any) => {
                 if (e.target?.contains(menuRef.current) && e.target !== menuRef.current) {
                     setAnimation(false)
                     timerId = setTimeout(() => {
                         onClose()
+                        document.body.style.overflow = "auto";
                     }, 300)
                 }
             }
@@ -58,7 +60,9 @@ const BurgerMenu: FC<burgerMenuProps> = ({isOpen, onClose}) => {
                     <p className={"mb-5"}>
                         e-mail: test@mail.ru
                     </p>
-                    <CustomButton label={"Обсудить проект"} onClick={() => {}} style={ButtonStyles.outlinedButton}/>
+                    <div className={"w-50"}>
+                        <CustomButton label={"Обсудить проект"} onClick={() => {}} style={ButtonStyles.outlinedButton}/>
+                    </div>
                 </div>
             </div>
         </div>,
