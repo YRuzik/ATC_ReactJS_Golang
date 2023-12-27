@@ -70,8 +70,6 @@ const CarouselBlock = () => {
         }, 300)
     }
 
-    console.log("rerender")
-
     return (
         <div>
             <div>

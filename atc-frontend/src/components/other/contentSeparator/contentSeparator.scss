@@ -1,0 +1,36 @@
+@use "../../../styles/global";
+.separator-container {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  opacity: 0.5;
+  padding-bottom: 55px;
+}
+
+.separator-container div:first-child {
+  margin-bottom: 10px;
+}
+
+.separator-container div h3 {
+  color: #AFAFAF;
+}
+
+.separator-line {
+  width: 0;
+  height: 2px;
+  transition: all global.$default-transition*2 ease-in-out;
+  background-color: #AFAFAF;
+}
+
+.separator-line.inview {
+  width: 100%;
+}
+
+.separator-content {
+  opacity: 0;
+  transition: all global.$default-transition*2 ease-in-out;
+}
+
+.separator-content.inview {
+  opacity: 1;
+}

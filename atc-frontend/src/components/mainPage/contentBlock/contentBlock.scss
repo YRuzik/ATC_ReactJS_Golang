@@ -1,0 +1,13 @@
+@use "../../../styles/global";
+
+.content-container {
+  opacity: 0;
+  transition: global.$default-transition * 4;
+  transform: translateY(30%);
+  transition-delay: 0.05s;
+}
+
+.content-container.inview {
+  opacity: 1;
+  transform: translateY(0%);
+}
