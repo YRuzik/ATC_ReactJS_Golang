@@ -1,7 +1,7 @@
 import first from "../../../assets/img/carouselBlock/first.jpg"
 import second from "../../../assets/img/carouselBlock/second.jpg"
 import third from "../../../assets/img/carouselBlock/third.jpg"
-import {useState} from "react";
+import {useRef, useState} from "react";
 import "./carouselBlock.scss"
 import CustomButton from "../../other/customButton/CustomButton.tsx";
 import SearchBar from "../../other/searchBar/SearchBar.tsx";
@@ -11,18 +11,21 @@ import SliderIndicator from "../../other/sliderIndicator/SliderIndicator.tsx";
 const CarouselBlock = () => {
     const mockData = [
         {
+            index: 0,
             title: "внедрение мультимедийных решений для конференц залов",
             subtitle: "Системный интегратор мультимедийных решений",
             description: "Комплексное оснащение конференц-залов, ситуационных центров, переговорных комнат, учебных центров и пр.",
             img_url: first
         },
         {
+            index: 1,
             title: "Системный интегратор мультимедийных решений и что-то там еще",
             subtitle: "внедрение мультимедийных решений для конференц залов",
             description: "Комплексное оснащение конференц-залов, ситуационных центров, переговорных комнат, учебных центров и пр.",
             img_url: second
         },
         {
+            index: 2,
             title: "внедрение мультимедийных решений для конференц залов",
             subtitle: "Системный интегратор мультимедийных решений",
             description: "Комплексное оснащение конференц-залов, ситуационных центров, переговорных комнат, учебных центров и пр.",
@@ -31,47 +34,53 @@ const CarouselBlock = () => {
     ]
 
     const [slideData, setSlideData] = useState(mockData[0])
-    const [slideIndex, setIndex] = useState(0)
-    const [isAnimating, setAnimation] = useState(false)
+    const imageAnimatingRef = useRef<HTMLImageElement>(null)
+    const contentAnimatingRef = useRef<HTMLDivElement>(null)
 
     const handleOnNext = () => {
-        const normalizedIndex = slideIndex + 1;
-        setAnimation(true)
-        setTimeout(() => {
-            if (normalizedIndex === mockData.length) {
-                setSlideData(mockData[0])
-                setIndex(0)
-            } else {
-                setSlideData(mockData[slideIndex + 1])
-                setIndex(slideIndex + 1)
-            }
-            setAnimation(false)
-        }, 300)
+        const normalizedIndex = slideData.index + 1;
+        if ((imageAnimatingRef !== null) && (contentAnimatingRef !== null)) {
+            imageAnimatingRef.current!.className = "carousel-image image-out";
+            contentAnimatingRef.current!.className = "carousel-changeable-area transform-out";
+            setTimeout(() => {
+                if (normalizedIndex === mockData.length) {
+                    setSlideData(mockData[0])
+                } else {
+                    setSlideData(mockData[slideData.index + 1])
+                }
+                imageAnimatingRef.current!.className = "carousel-image image-in";
+                contentAnimatingRef.current!.className = "carousel-changeable-area transform-in";
+            }, 300)
+        }
+
     }
 
     const handleOnPrev = () => {
-        const normalizedIndex = slideIndex + 1;
-        setAnimation(true)
+        const normalizedIndex = slideData.index + 1;
+        imageAnimatingRef.current!.className = "carousel-image image-out";
+        contentAnimatingRef.current!.className = "carousel-changeable-area transform-out";
         setTimeout(() => {
             if (normalizedIndex === 1) {
                 setSlideData(mockData[mockData.length - 1])
-                setIndex(mockData.length - 1)
             } else {
-                setSlideData(mockData[slideIndex - 1])
-                setIndex(slideIndex - 1)
+                setSlideData(mockData[slideData.index - 1])
             }
-            setAnimation(false)
+            imageAnimatingRef.current!.className = "carousel-image image-in";
+            contentAnimatingRef.current!.className = "carousel-changeable-area transform-in";
         }, 300)
     }
 
+    console.log("rerender")
+
     return (
         <div>
-            <div >
+            <div>
                 <div className={"carousel-image-tint"}></div>
-                <img className={`carousel-image ${isAnimating ? "image-out" : "image-in"}`} src={slideData.img_url} alt={slideData.title} width={"100%"}/>
+                <img ref={imageAnimatingRef} className={`carousel-image`}
+                     src={slideData.img_url} alt={slideData.title} width={"100%"}/>
             </div>
             <div className={"body-container"}>
-                <div className={`carousel-changeable-area ${isAnimating ? "transform-out" : "transform-in"}`}>
+                <div ref={contentAnimatingRef} className={`carousel-changeable-area`}>
                     <h3 className={"mb-1"}>
                         {slideData.subtitle.toUpperCase()}
                     </h3>
@@ -84,11 +93,13 @@ const CarouselBlock = () => {
                 </div>
                 <div className={"carousel-actions"}>
                     <div>
-                        <CustomButton label={"ОБСУДИТЬ ПРОЕКТ"} onClick={() => {}}/>
+                        <CustomButton label={"ОБСУДИТЬ ПРОЕКТ"} onClick={() => {
+                        }}/>
                     </div>
                     <SearchBar/>
                 </div>
-                <SliderIndicator onNext={() => handleOnNext()} onPrev={() => handleOnPrev()} current={slideIndex} total={mockData.length}/>
+                <SliderIndicator onNext={() => handleOnNext()} onPrev={() => handleOnPrev()} current={slideData.index}
+                                 total={mockData.length}/>
             </div>
         </div>
     )
