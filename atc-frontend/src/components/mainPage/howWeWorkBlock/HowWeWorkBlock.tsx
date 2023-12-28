@@ -1,4 +1,4 @@
-import "./howWeWorkBlock.scss"
+import "../specific.scss"
 import CustomCard, {CardStyle} from "../../other/customCard/CustomCard.tsx";
 
 const HowWeWorkBlock = () => {

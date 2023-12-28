@@ -2,6 +2,7 @@ import CarouselBlock from "../../components/mainPage/carouselBlock/CarouselBlock
 import ContentBlock from "../../components/mainPage/contentBlock/ContentBlock.tsx";
 import HowWeWorkBlock from "../../components/mainPage/howWeWorkBlock/HowWeWorkBlock.tsx";
 import ForWhoBlock from "../../components/mainPage/forWhoBlock/ForWhoBlock.tsx";
+import SolutionsBlock from "../../components/mainPage/solutionsBlock/SolutionsBlock.tsx";
 
 
 const MainPage = () => {
@@ -15,6 +16,9 @@ const MainPage = () => {
             </div>
             <div className={"block-padding"}>
                 <ContentBlock index={2} child={<ForWhoBlock/>}/>
+            </div>
+            <div className={"block-padding"}>
+                <ContentBlock index={3} child={<SolutionsBlock/>}/>
             </div>
         </div>
     )

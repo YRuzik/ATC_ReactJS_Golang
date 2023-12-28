@@ -1,5 +1,4 @@
 import "./forWhoBlock.scss"
-import {useRef} from "react";
 
 const ForWhoBlock = () => {
     return (

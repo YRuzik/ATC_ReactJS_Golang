@@ -42,6 +42,35 @@
   background: global.$default-gradient;
 }
 
+.image-card {
+  display: flex;
+  width: 100%;
+  flex-direction: column;
+  border-bottom: {
+    style: solid;
+    width: 1px;
+    color: #191919;
+  };
+  cursor: pointer;
+}
+
+.image-card img {
+  width: 100%;
+  height: 420px;
+  border-radius: global.$card-radius;
+  margin-bottom: 10px;
+}
+
+.image-card h3 {
+  margin-bottom: 10px;
+}
+
+.image-card p {
+  width: 100%;
+  margin-bottom: 10px;
+}
+
+
 //---
 
 .card-number {

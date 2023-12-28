@@ -8,6 +8,7 @@ import i_menu from "../../../assets/icons/Menu.svg";
 import i_search from "../../../assets/icons/Search.svg";
 import i_next from "../../../assets/icons/Next.svg";
 import i_circle from "../../../assets/icons/Circle.svg";
+import i_upward_arrow from "../../../assets/icons/Upward Arrow.svg";
 
 import './icon.scss'
 
@@ -15,7 +16,8 @@ export enum AppIcons {
     menu = i_menu,
     search = i_search,
     next = i_next,
-    circle = i_circle
+    circle = i_circle,
+    upward_arrow = i_upward_arrow
 }
 
 type iconProps = {
