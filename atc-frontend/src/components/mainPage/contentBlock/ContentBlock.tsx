@@ -28,9 +28,9 @@ const ContentBlock: FC<contentBlockProps> = ({child, index}) => {
         <div>
             <div className={"body-container"}>
                 {index ? <ContentSeparator index={index}/> : null}
-                <div className={'content-container'} ref={contentRef}>
-                    {child}
-                </div>
+            </div>
+            <div className={'content-container'} ref={contentRef}>
+                {child}
             </div>
         </div>
     )

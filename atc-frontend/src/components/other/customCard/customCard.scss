@@ -13,6 +13,15 @@
   overflow: hidden;
 }
 
+.card-container h2 {
+  width: 100%;
+  padding-bottom: 10px;
+}
+
+.card-container p {
+  width: 100%;
+}
+
 //card styles
 
 .default-card {
@@ -39,5 +48,5 @@
   position: absolute;
   right: 0;
   top: -30px;
-  opacity: 0.1;
+  opacity: 0.2;
 }

@@ -1,5 +1,33 @@
 .card-grid {
-  display: grid;
-  gap: 10px;
-  grid-template-columns: repeat(auto-fill, minmax(25%, 1fr));
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+
+.card-grid div {
+  flex: 1 0 25%;
+  margin: 5px;
+}
+
+.card-grid p {
+  width: 25%;
+}
+
+@media (max-width: 1024px) {
+  .card-grid div {
+    flex: 1 0 40%;
+  }
+  .card-grid p {
+    width: 50%;
+  }
+}
+
+@media (max-width: 768px) {
+  .card-grid div {
+    flex: 1 0 100%;
+    margin: 5px 0;
+  }
+  .card-grid p {
+    width: 100%;
+  }
 }
