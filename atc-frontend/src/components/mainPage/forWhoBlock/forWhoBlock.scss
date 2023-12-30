@@ -1,5 +1,6 @@
 .for-who-container {
   position: relative;
+  overflow: hidden;
 }
 
 .for-who-container p {
@@ -14,6 +15,7 @@
   white-space: nowrap;
   display: flex;
   flex-direction: column;
+  overflow: hidden;
 }
 
 .infinity-text-container h1 {
@@ -32,7 +34,6 @@
 }
 
 .m-scroll {
-  overflow: hidden;
   height: 100%;
   white-space: nowrap;
   margin: 0;

@@ -1,0 +1,23 @@
+.indexed-card-container {
+  width: 100%;
+}
+
+.indexed-card-container div {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: end;
+  align-items: start;
+}
+
+.indexed-card-container div p {
+  width: 100%;
+  padding-top: 10px;
+}
+
+.index-container {
+  position: absolute;
+  right: -10px;
+  top: -24px;
+  opacity: 0.3;
+}

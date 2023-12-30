@@ -1,30 +1,24 @@
 @use "../../../styles/global";
 
-.card-container {
+@mixin card-mixin {
   position: relative;
   width: 100%;
-  height: 252px;
   border-radius: global.$card-radius;
   background: transparent;
-  display: flex;
-  flex-direction: column;
-  justify-content: end;
   padding: 25px;
   overflow: hidden;
 }
 
-.card-container h2 {
-  width: 100%;
-  padding-bottom: 10px;
-}
-
-.card-container p {
-  width: 100%;
+@mixin blur-properties {
+  backdrop-filter: blur(10px);
+  background-color: rgba(43, 43, 43, 0.21);
 }
 
 //card styles
 
 .default-card {
+  @include card-mixin;
+
   border-color: #2B2B2B;
   border: {
     style: solid;
@@ -34,42 +28,21 @@
 }
 
 .blur-card {
-  backdrop-filter: blur(10px);
-  background-color: rgba(43, 43, 43, 0.21);
+  @include card-mixin;
+  @include blur-properties;
+}
+
+.max-blur-card {
+  @include card-mixin;
+  @include blur-properties;
+
+  border-radius: global.$max-radius;
 }
 
 .gradient-card {
+  @include card-mixin;
   background: global.$default-gradient;
 }
-
-.image-card {
-  display: flex;
-  width: 100%;
-  flex-direction: column;
-  border-bottom: {
-    style: solid;
-    width: 1px;
-    color: #191919;
-  };
-  cursor: pointer;
-}
-
-.image-card img {
-  width: 100%;
-  height: 420px;
-  border-radius: global.$card-radius;
-  margin-bottom: 10px;
-}
-
-.image-card h3 {
-  margin-bottom: 10px;
-}
-
-.image-card p {
-  width: 100%;
-  margin-bottom: 10px;
-}
-
 
 //---
 
