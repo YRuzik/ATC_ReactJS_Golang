@@ -4,6 +4,7 @@ import HowWeWorkBlock from "../../components/mainPage/howWeWorkBlock/HowWeWorkBl
 import ForWhoBlock from "../../components/mainPage/forWhoBlock/ForWhoBlock.tsx";
 import SolutionsBlock from "../../components/mainPage/solutionsBlock/SolutionsBlock.tsx";
 import AllRegionsBlock from "../../components/mainPage/allRegionsBlock/AllRegionsBlock.tsx";
+import AboutUsBlock from "../../components/mainPage/aboutUsBlock/aboutUsBlock.tsx";
 
 
 const MainPage = () => {
@@ -22,7 +23,10 @@ const MainPage = () => {
                 <ContentBlock index={3} child={<SolutionsBlock/>}/>
             </div>
             <div className={"block-padding"}>
-                <ContentBlock index={4} child={<AllRegionsBlock/>}/>
+                <ContentBlock index={4} child={<AboutUsBlock/>}/>
+            </div>
+            <div className={"block-padding"}>
+                <ContentBlock index={5} child={<AllRegionsBlock/>}/>
             </div>
         </div>
     )

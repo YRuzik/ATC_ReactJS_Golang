@@ -1,0 +1,41 @@
+@use "../../../../styles/global";
+.image-card-container {
+  border-radius: global.$card-radius;
+  transition: global.$default-transition;
+  width: 100%;
+}
+
+.image-card-container img:first-child {
+  object-fit: cover;
+  border-radius: global.$card-radius;
+  width: 100%;
+}
+
+.image-card-container div {
+  width: 100%;
+}
+
+.has-image {
+  border-bottom: {
+    width: 1px;
+    color: #191919;
+    style: solid;
+  };
+}
+
+.has-image:hover {
+  border-color: #6DDCFF;
+}
+
+.no-image {
+  border: {
+    width: 1px;
+    color: #F9F9F933;
+    style: solid;
+  };
+  padding: 0 20px;
+}
+
+.no-image:hover {
+  border-color: #303737;
+}
