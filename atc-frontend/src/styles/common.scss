@@ -16,6 +16,24 @@
   align-items: center;
 }
 
+.c-flex-sb-s {
+  display: flex;
+  flex-direction: column;
+  align-items: start;
+  justify-content: space-between;
+}
+
+.c-flex-sb-c {
+  display: flex;
+  flex-direction: column;
+  align-items: start;
+  justify-content: center;
+}
+
+.height-400 {
+  height: 400px;
+}
+
 .w-50 {
   width: 50%;
 }
@@ -26,6 +44,10 @@
 
 .mr-5 {
   margin-right: 5%;
+}
+
+.p-5 {
+  padding: 5%;
 }
 
 .m-5 {
