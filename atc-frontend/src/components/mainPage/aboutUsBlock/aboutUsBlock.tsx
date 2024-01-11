@@ -51,7 +51,7 @@ const AboutUsBlock = () => {
                     />
                 </div>
                 <div className={"w-50 p-5"}>
-                    <h1 className={"mb-5"}>
+                    <h1 className={"mb-"}>
                         #О КОМПАНИИ
                     </h1>
                     <p>
